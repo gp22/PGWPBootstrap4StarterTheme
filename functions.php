@@ -313,14 +313,8 @@ if ( ! function_exists( 'st2_enqueue_scripts' ) ) :
 
         /* Pinegrow generated Enqueue Styles Begin */
 
-    wp_deregister_style( 'st2-bootstrap' );
-    wp_enqueue_style( 'st2-bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', false, null, 'all');
-
     wp_deregister_style( 'st2-theme' );
     wp_enqueue_style( 'st2-theme', get_template_directory_uri() . '/css/theme.css', false, null, 'all');
-
-    wp_deregister_style( 'st2-woocommerce' );
-    wp_enqueue_style( 'st2-woocommerce', get_template_directory_uri() . '/css/woocommerce.css', false, null, 'all');
 
     wp_deregister_style( 'st2-style' );
     wp_enqueue_style( 'st2-style', get_bloginfo('stylesheet_url'), false, null, 'all');
