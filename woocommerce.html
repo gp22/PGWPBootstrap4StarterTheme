@@ -13,46 +13,44 @@
         <title>Pinegrow Starter Theme 2</title>
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <link href="style.css" rel="stylesheet" type="text/css" wp-no-export>
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="css/theme.css" rel="stylesheet" type="text/css">
-        <link href="css/woocommerce.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="hfeed site" id="page">
             <header>
                 <div itemscope="" itemtype="http://schema.org/WebSite" id="wrapper-navbar">
                     <a class="skip-link sr-only sr-only-focusable" href="#content">Skip to content</a>
-                    <nav class="navbar bg-primary navbar-dark navbar-expand-lg"> 
+                    <nav class="navbar bg-primary navbar-dark navbar-expand-lg">
                         <div class="container">
                             <div data-pg-name="Brand Without Custom Logo" wp-if-custom="has_custom_logo()" wp-if-custom-not="true">
                                 <a rel="home" class="navbar-brand" href="#" cms-site-name>ST2 Reboot Edition</a>
                             </div>
                             <div wp-call-function="the_custom_logo();" data-pg-name="Brand With Custom Logo" wp-else-if></div>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler6" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'st2' ); ?>"> 
-                                <span class="navbar-toggler-icon"></span> 
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler6" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'st2' ); ?>">
+                                <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarToggler6"> 
-                                <ul class="navbar-nav mt-2 mt-lg-0 ml-auto " wp-nav-menu="primary" wp-nav-menu-type="bootstrap4" wp-if-has-nav-menu="primary" wp-nav-menu-depth="2"> 
-                                    <li class="nav-item active"> 
-                                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> 
-                                    </li>                                     
-                                    <li class="nav-item"> 
-                                        <a class="nav-link" href="#">Link</a> 
-                                    </li>                                     
-                                    <li class="nav-item"> 
-                                        <a class="nav-link disabled" href="#">Disabled</a> 
-                                    </li>                                     
-                                    <li class="nav-item dropdown"> 
-                                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                    Dropdown link                                </a> 
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-                                            <a class="dropdown-item" href="#">Action</a> 
-                                            <a class="dropdown-item" href="#">Another action</a> 
-                                            <a class="dropdown-item" href="#">Something else here</a> 
-                                        </div>                                         
-                                    </li>                                     
-                                </ul>                                 
+                            <div class="collapse navbar-collapse" id="navbarToggler6">
+                                <ul class="navbar-nav mt-2 mt-lg-0 ml-auto " wp-nav-menu="primary" wp-nav-menu-type="bootstrap4" wp-if-has-nav-menu="primary" wp-nav-menu-depth="2">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="#">Disabled</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                    Dropdown link                                </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>                         
+                        </div>
                     </nav>
                 </div>
                 <div data-pg-name="jumbotron_wrapper" wp-cz-control="show_jumbotron" wp-cz-control-label="Show Jumbotron" wp-cz-control-type="checkbox" wp-cz-control-section="header_settings" wp-if-get-theme-mod="show_jumbotron" wp-cz-control-description="Activate the Jumbotron. Note: It will be visible on ALL the theme templates. If you need a selective display, use the Hero slider or  Hero Canvas widgets and the Widget Logic plugin.">
@@ -68,21 +66,21 @@
                         <div class="carousel-inner">
                             <div class="widget_text carousel-item" wp-register-sidebar="Hero Slider" wp-register-sidebar-id="hero" wp-register-sidebar-description="Hero slider area. Place two or more widgets here and they will slide!" wp-register-sidebar-before="<div class=&quot;carousel-item&quot;>" wp-register-sidebar-after="</div>" wp-dynamic-sidebar="hero" wp-register-sidebar-before-title=" " wp-register-sidebar-after-title=" " wp-dynamic-sidebar-set="element" data-pg-name="Carousel Slide">
                                 <div class="textwidget custom-html-widget">
-                                    <div class="jumbotron" style="background-color:#271044;"> 
-                                        <div class="container"> 
-                                            <h1 class="display-3" style="color:#ffffff;">Starter Theme <b>2</b></h1> 
-                                            <p class="lead" style="color:white;">Powered with Bootstrap 4 and SASS.</p> 
-                                        </div>                                         
+                                    <div class="jumbotron" style="background-color:#271044;">
+                                        <div class="container">
+                                            <h1 class="display-3" style="color:#ffffff;">Starter Theme <b>2</b></h1>
+                                            <p class="lead" style="color:white;">Powered with Bootstrap 4 and SASS.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="widget_text carousel-item" wp-preview="wp-dynamic-sidebar">
                                 <div class="textwidget custom-html-widget">
-                                    <div class="jumbotron" style="background-color:#972215;"> 
-                                        <div class="container"> 
-                                            <h1 class="display-3" style="color:#ffffff;">Starter Theme <b>2</b></h1> 
-                                            <p class="lead" style="color:white;">Powered with Bootstrap 4 and SASS.</p> 
-                                        </div>                                         
+                                    <div class="jumbotron" style="background-color:#972215;">
+                                        <div class="container">
+                                            <h1 class="display-3" style="color:#ffffff;">Starter Theme <b>2</b></h1>
+                                            <p class="lead" style="color:white;">Powered with Bootstrap 4 and SASS.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +117,7 @@
                             <div class="col-md-4 widget-area" wp-if-get-theme-mod="show_left_sidebar" role="complementary" id="left-sidebar" wp-hide wp-no-export>
                                 <aside wp-dynamic-sidebar="left-sidebar" wp-dynamic-sidebar-set="element"></aside>
                                 <h3 wp-no-export>Left Sidebar</h3>
-                                <p wp-no-export>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                                <p wp-no-export>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                             </div>
                             <div id="primary" class="content-area col-md-12">
                                 <main class="site-main" id="main">
@@ -137,12 +135,12 @@
                                             <footer class="entry-footer"></footer>
                                         </div>
                                     </div>
-                                </main>                                 
+                                </main>
                             </div>
                             <div class="col-md-4 widget-area" wp-if-get-theme-mod="show_right_sidebar" role="complementary" id="right-sidebar" wp-hide wp-no-export>
                                 <aside wp-dynamic-sidebar="right-sidebar" wp-dynamic-sidebar-set="element"></aside>
                                 <h3 wp-no-export>Right Sidebar</h3>
-                                <p wp-no-export>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                                <p wp-no-export>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                             </div>
                         </div>
                     </div>
