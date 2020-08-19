@@ -1,5 +1,19 @@
+/* Import Bootstrap */
+@import "custom";
+
 // Your Custom Theme & WordPress related CSS rules should come here //
 // Edit bootstrap_theme>custom.scss to add/modify custom rules which are "bootstrap related" //
+.tracking-wider {
+    letter-spacing: 0.05em
+}
+
+// For setting max width of page content.
+//
+$wrap: map-get($container-max-widths, "xl");
+.wrap {
+    max-width: $wrap
+}
+
 img.wp-post-image,
 article img,
 figure,
