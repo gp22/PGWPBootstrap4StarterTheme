@@ -5,6 +5,8 @@ import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import sourcemaps from "gulp-sourcemaps";
 import cleanCss from "gulp-clean-css";
+import purgecss from "gulp-purgecss";
+import purgecssWordpress from "purgecss-with-wordpress";
 import gulpif from "gulp-if";
 // import imagemin from "gulp-imagemin";
 // import del from "del";
@@ -70,6 +72,16 @@ export let styles = (done) => {
 		.src(paths.styles.src)
 		.pipe(gulpif(!PROD, sourcemaps.init()))
 		.pipe(sass().on("error", sass.logError))
+		.pipe(
+			gulpif(
+				PROD,
+				purgecss({
+					content: ["**/*.html"],
+					whitelist: purgecssWordpress.whitelist,
+					whitelistPatterns: purgecssWordpress.whitelistPatterns,
+				})
+			)
+		)
 		.pipe(gulpif(PROD, postcss([autoprefixer()])))
 		.pipe(gulpif(PROD, cleanCss({ compatibility: "*" }))) // default ie10 compatibility: https://www.npmjs.com/package/clean-css#compatibility-modes
 		.pipe(gulpif(!PROD, sourcemaps.write()))
