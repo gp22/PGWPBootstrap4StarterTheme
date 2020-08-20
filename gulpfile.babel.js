@@ -1,8 +1,8 @@
 import gulp from "gulp";
 import yargs from "yargs";
 import sass from "gulp-sass";
-// import postcss from "gulp-postcss";
-// import autoprefixer from "autoprefixer";
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
 import sourcemaps from "gulp-sourcemaps";
 import cleanCss from "gulp-clean-css";
 import gulpif from "gulp-if";
@@ -10,9 +10,7 @@ import gulpif from "gulp-if";
 // import del from "del";
 // import webpack from "webpack-stream";
 // import uglify from "gulp-uglify";
-// import named from "vinyl-named";
 // import browserSync from "browser-sync";
-// import zip from "gulp-zip";
 
 // let server = browserSync.create();
 const PROD = yargs.argv.prod;
@@ -66,17 +64,18 @@ let paths = {
 
 // export let clean = () => del(["public", "package"]);
 
-export let styles = () => {
-	return (
-		gulp
-			.src(paths.styles.src)
-			.pipe(gulpif(!PROD, sourcemaps.init()))
-			.pipe(sass().on("error", sass.logError))
-			// .pipe(gulpif(PROD, postcss([autoprefixer()])))
-			.pipe(gulpif(PROD, cleanCss({ compatibility: "*" }))) // default ie10 compatibility: https://www.npmjs.com/package/clean-css#compatibility-modes
-			.pipe(gulpif(!PROD, sourcemaps.write()))
-			.pipe(gulp.dest(paths.styles.dest))
-	);
+export let styles = (done) => {
+	// return (
+	gulp
+		.src(paths.styles.src)
+		.pipe(gulpif(!PROD, sourcemaps.init()))
+		.pipe(sass().on("error", sass.logError))
+		.pipe(gulpif(PROD, postcss([autoprefixer()])))
+		.pipe(gulpif(PROD, cleanCss({ compatibility: "*" }))) // default ie10 compatibility: https://www.npmjs.com/package/clean-css#compatibility-modes
+		.pipe(gulpif(!PROD, sourcemaps.write()))
+		.pipe(gulp.dest(paths.styles.dest));
+	// );
+	done();
 	// .pipe(server.stream());
 };
 
@@ -128,13 +127,6 @@ export let watch = () => {
 // 		.pipe(gulp.dest(paths.scripts.dest));
 // };
 
-// export let compress = () => {
-// 	return gulp
-// 		.src(paths.package.src)
-// 		.pipe(zip("pg-genesis-starter.zip"))
-// 		.pipe(gulp.dest(paths.package.dest));
-// };
-
 export let dev = gulp.series(
 	// clean,
 	// gulp.parallel(styles, scripts, images, copy),
@@ -148,6 +140,6 @@ export let dev = gulp.series(
 // 	gulp.parallel(styles, scripts, images, copy)
 // );
 
-// export let bundle = gulp.series(build, compress);
+export let build = gulp.series(styles);
 
 export default dev;
