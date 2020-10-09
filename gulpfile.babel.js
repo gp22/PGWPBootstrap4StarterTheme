@@ -19,8 +19,8 @@ const PROD = yargs.argv.prod;
 
 let paths = {
 	styles: {
-		src: ["bootstrap_theme/theme.scss" /* "src/scss/admin.scss" */],
-		dest: "css",
+		src: ["src/style.scss" /* "src/scss/admin.scss" */],
+		dest: "build/css",
 	},
 	// images: {
 	// 	src: "src/img/**/*.{jpg,jpeg,png,svg,gif}",
@@ -103,7 +103,7 @@ export let styles = (done) => {
 // };
 
 export let watch = () => {
-	gulp.watch("bootstrap_theme/**/*.scss", styles);
+	gulp.watch("src/**/*.scss", styles);
 	// gulp.watch("src/js/**/*.js", gulp.series(scripts, reload));
 	// gulp.watch("**/*.php", reload);
 	// gulp.watch(paths.images.src, gulp.series(images, reload));
