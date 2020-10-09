@@ -1,16 +1,81 @@
 // Your Custom Theme & WordPress related CSS rules should come here //
 // Edit bootstrap_theme>custom.scss to add/modify custom rules which are "bootstrap related" //
-.tracking-wider {
-    letter-spacing: 0.05em
-}
 
-// For setting max width of page content.
-//
-$wrap: map-get($container-max-widths, "xl");
-.wrap {
-    max-width: $wrap
-}
+body {
+    @include media-breakpoint-up("md") {
+      font-size: $font-size-base * 1.125;
+    }
+  }
 
+  .hero-container {
+    // 50px for the bottom svg height
+    // height: calc(100vh - #{$nav-link-height} - #{$navbar-padding-y * 2} - 50px);
+    height: calc(100vh - #{$nav-link-height} - 50px);
+    min-height: 600px;
+    // max-height: 700px;
+  }
+
+  .text-xs {
+    font-size: $text-xs;
+  }
+
+  .text-sm {
+    font-size: $text-sm;
+  }
+
+  .text-lg {
+    font-size: $text-lg;
+  }
+
+  .text-xl {
+    font-size: $text-xl;
+  }
+
+  .text-2xl {
+    font-size: $text-2xl;
+  }
+
+  .text-3xl {
+    font-size: $text-3xl;
+  }
+
+  .text-4xl {
+    font-size: $text-4xl;
+  }
+
+  .text-white-75 { color: rgba($white, .75) !important; }
+
+  // Tracking
+  $tracking-tight:   -0.025em;
+  $tracking-tighter: -0.05em;
+  $tracking-wider:    0.05em;
+
+  .tracking-wider {
+    letter-spacing: $tracking-wider;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: $tracking-tight;
+  }
+
+  .font-heading {
+    font-family: $headings-font-family;
+  }
+
+  // For setting max width of page content.
+  //
+  $wrap: map-get($container-max-widths, "lg");
+  .wrap {
+    max-width: $wrap;
+
+    @include media-breakpoint-up("md") {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+/* Pinegrow Starter Styles
+--------------------------------------------- */
 img.wp-post-image,
 article img,
 figure,
